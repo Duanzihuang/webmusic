@@ -1,8 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 
-Vue.config.productionTip = false
+// 集成element-ui
+// import '@/plugins/element-ui'
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+// 导入路由
+import router from '@/router'
+
+const app = createApp(App)
+app.use(router)
+
+app.mount('#app')
