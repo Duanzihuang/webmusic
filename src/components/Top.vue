@@ -11,12 +11,24 @@
         <span @click="$router.go(1)" class="iconfont icon-arrow-right"></span>
       </div>
     </div>
-    <div class="right-box"></div>
+    <div class="right-box">
+      <el-input size="small" @keyup.enter.native="toResult" placeholder="搜索" v-model.trim="query">
+        <i slot="prefix" class="el-input__icon el-icon-search"></i>
+      </el-input>
+    </div>
   </div>
 </template>
 
 <script>
+import { reactive, toRefs } from '@vue/composition-api'
 export default {
-  name: 'Top'
+  name: 'Top',
+  setup() {
+    const state = reactive({
+      query: ''
+    })
+
+    return { ...toRefs(state) }
+  }
 }
 </script>

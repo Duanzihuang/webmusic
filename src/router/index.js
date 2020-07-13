@@ -1,4 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -16,6 +18,11 @@ const routes = [
     component: () => import('@/views/Playlists')
   },
   {
+    path: '/playlist',
+    name: 'Playlist',
+    component: () => import('@/views/Playlist')
+  },
+  {
     path: '/songs',
     name: 'Songs',
     component: () => import('@/views/Songs')
@@ -24,11 +31,16 @@ const routes = [
     path: '/mvs',
     name: 'Mvs',
     component: () => import('@/views/Mvs')
+  },
+  {
+    path: '/mv',
+    name: 'Mv',
+    component: () => import('@/views/Mv')
   }
 ]
 
-const router = createRouter({
-  history: createWebHashHistory(),
+const router = new VueRouter({
+  history: 'history',
   routes
 })
 
