@@ -18,7 +18,7 @@ const routes = [
     component: () => import('@/views/Playlists')
   },
   {
-    path: '/playlist',
+    path: '/playlist/:id',
     name: 'Playlist',
     component: () => import('@/views/Playlist')
   },
@@ -33,7 +33,7 @@ const routes = [
     component: () => import('@/views/Mvs')
   },
   {
-    path: '/mv',
+    path: '/mv/:id',
     name: 'Mv',
     component: () => import('@/views/Mv')
   }

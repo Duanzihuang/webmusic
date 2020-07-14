@@ -32,13 +32,17 @@
       <router-view />
     </div>
     <div class="player">
-      <audio ref="audioRef" controls autoplay loop></audio>
+      <audio ref="audioRef" :src="getUrl" controls autoplay loop></audio>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'Content'
+  name: 'Content',
+  computed: {
+    ...mapGetters({ getUrl: 'url/getUrl' })
+  }
 }
 </script>

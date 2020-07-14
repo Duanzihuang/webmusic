@@ -66,7 +66,8 @@ import {
   getBannerList,
   getRecommendlist,
   getNewsong,
-  getMv
+  getMv,
+  getSongUrl
 } from '@/api/discovery'
 export default {
   setup(props, { root }) {
@@ -103,8 +104,11 @@ export default {
       root.$router.push(`/playlist?id=${id}`)
     }
 
-    const playMusic = id => {
-      console.log(id)
+    const playMusic = async id => {
+      const res = await getSongUrl({
+        id: id
+      })
+      root.$store.commit('url/setUrl', res.data[0].url)
     }
 
     const toMv = id => {
