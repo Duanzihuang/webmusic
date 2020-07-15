@@ -13,7 +13,7 @@ export default {
   // },
   props: ['msg'],
   setup(props, { emit }) {
-    console.log('父组件传递过来的值', props.msg)
+    // console.log('父组件传递过来的值', props.msg)
 
     const sendValueToParent = () => {
       //   emit('sendValue', 111)

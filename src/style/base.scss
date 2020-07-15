@@ -61,6 +61,10 @@ ol {
   tbody {
     border-bottom: none;
   }
+  .el-table__row {
+    width: 100%;
+    height: 94px;
+  }
   td {
     border-bottom: none;
     &:first-child {

@@ -5,7 +5,10 @@ import {
   CarouselItem,
   Pagination,
   Table,
-  TableColumn
+  TableColumn,
+  Tabs,
+  TabPane,
+  Message
 } from 'element-ui'
 
 Vue.use(Input)
@@ -14,3 +17,6 @@ Vue.use(CarouselItem)
 Vue.use(Pagination)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Tabs)
+Vue.use(TabPane)
+Vue.prototype.$message = Message

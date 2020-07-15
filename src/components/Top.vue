@@ -23,12 +23,20 @@
 import { reactive, toRefs } from '@vue/composition-api'
 export default {
   name: 'Top',
-  setup() {
+  setup(props, { root }) {
     const state = reactive({
       query: ''
     })
 
-    return { ...toRefs(state) }
+    const toResult = () => {
+      if (!state.query) {
+        root.$message.warning('请输入查询内容')
+      } else {
+        root.$router.push(`/result?keywords=${state.query}`)
+      }
+    }
+
+    return { ...toRefs(state), toResult }
   }
 }
 </script>
